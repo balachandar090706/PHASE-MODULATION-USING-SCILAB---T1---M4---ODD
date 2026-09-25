@@ -2,6 +2,7 @@
 
 
 ## Aim
+
 To implement and analyze Phase Modulation (PM) using Scilab.
 
 ## Apparatus Required
@@ -24,7 +25,41 @@ Where:
 * $m(t)$ : Message signal, typically $m(t) = A_m \cos(2\pi f_m t)$
 * $k_p$ : Phase deviation sensitivity (in radians/volt)
 
----
+## Scilab code:
+~~~
+Am = 2;
+Ac = 5;
+Fm = 20;
+Fc = 200;
+Fs = 2000;
+Kp = 5` ;
+
+t = 0:1/Fs:0.5;
+
+Em =  Am*cos(2*%pi*Fm*t);
+Ec =  Ac*cos(2*%pi*Fc*t);
+
+Epm = Ac*cos(2*%pi*Fc*t+Kp*Em);
+
+subplot(3,1,1);
+plot(t,Em);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Message Signal");
+
+subplot(3,1,2);
+plot(t,Ec);
+xlabel("TIme(s)");
+ylabel("Amplitude");
+title("Carrier Signal");
+
+subplot(3,1,3);
+plot(t,Epm);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Phase Modulation Signal");
+
+~~~
 
 ## Algorithm
 1. **Initialize Parameters:**
@@ -41,12 +76,12 @@ Where:
    * Use Scilab's plotting commands (`subplot`, `plot`, `xtitle`, `xgrid`) to display message, carrier, and modulated signals.
 
 ---
-TABULATION:
-<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/da9b3e86-c964-4672-9f33-bdfb0a6b27c2" />
+##Tabulation:
+<img width="1280" height="768" alt="image" src="https://github.com/user-attachments/assets/7a19f1bd-16e0-461f-9ea9-bf234aa13e20" />
 
+##Calculation:
 
-## MODEL GRAPH
-<img width="1599" height="899" alt="image" src="https://github.com/user-attachments/assets/8050c418-fb13-4b66-868b-5e471cc11783" />
+<img width="668" height="728" alt="image" src="https://github.com/user-attachments/assets/85eb3629-92bb-4ab5-829e-726f594ffc0d" />
 
-Result The message signal, carrier signal, and phase-modulated (PM) signal will be displayed in separate plots.
-
+## Result: 
+The Phase Modulation is generated successfully.
