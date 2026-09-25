@@ -84,4 +84,5 @@ title("Phase Modulation Signal");
 <img width="668" height="728" alt="image" src="https://github.com/user-attachments/assets/85eb3629-92bb-4ab5-829e-726f594ffc0d" />
 
 ## Result: 
-The Phase Modulation is generated successfully.
+
+ The message signal, carrier signal, and phase-modulated (PM) signal will be displayed in separate plots.
